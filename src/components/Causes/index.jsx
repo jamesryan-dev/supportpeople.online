@@ -176,9 +176,9 @@ function Causes(props) {
       )
     } else if (num === 4) {
       return (
-        <Link href="/asian">
+        <Link href="/stopasianhate">
           <a className="cause">
-            <h3>Asian</h3>
+            <h3>Stop Asian Hate</h3>
           </a>
         </Link>
       )
@@ -186,7 +186,7 @@ function Causes(props) {
       return (
         <Link href="/women">
           <a className="cause">
-            <h3>Asian</h3>
+            <h3>Women</h3>
           </a>
         </Link>
       )
@@ -210,6 +210,16 @@ function Causes(props) {
         <Link href="/endsars">
           <a className="cause endsars">
             <h3>End Sars</h3>
+          </a>
+        </Link>
+        <Link href="/stopasianhate">
+          <a className="cause stopasianhate">
+            <h3>Stop Asian Hate</h3>
+          </a>
+        </Link>
+        <Link href="/endviolenceagainstwomen">
+          <a className="cause endviolenceagainstwomen">
+            <h3>End Violence Against Women</h3>
           </a>
         </Link>
       </CausesComp>

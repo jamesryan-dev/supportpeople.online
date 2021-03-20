@@ -72,11 +72,32 @@ html {
     opacity: 1;
   }
 
+  .stopasianhate .button {
+    background: #561985 !important;
+    color: white !important;
+  }
+
+  span {
+    font-size: 80%;
+  }
+
   .cause.blm {
     &:after {
       background: #ce4b49;
     }
 
+  }
+
+  .cause.stopasianhate {
+    &:after {
+      background: #561985;
+    }
+  }
+
+  .cause.endviolenceagainstwomen {
+    &:after {
+      background: #BB0243;
+    }
   }
 
   .cause.yemen {

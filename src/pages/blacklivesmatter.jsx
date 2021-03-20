@@ -157,7 +157,7 @@ const BlackLivesMatter = ({ categories }) => {
   ]
 
   return (
-    <Layout navigation={navItems} pageTitle="BLACK LIVES MATTER" childPage>
+    <Layout navigation={navItems} pageTitle="BLACK LIVES MATTER" childPage blm>
       <Head>
         <title>SUPPORTPEOPLE.ONLINE - BLACK LIVES MATTER</title>
         <meta

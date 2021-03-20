@@ -112,7 +112,7 @@ const Footer = styled.div`
 `
 
 function Layout(props) {
-  const { children, navigation, pageTitle, theme, childPage } = props
+  const { children, navigation, pageTitle, theme, childPage, blm } = props
   const renderSubNav = () => {
     if (childPage) {
       return (
@@ -148,7 +148,7 @@ function Layout(props) {
               </Link>
               <p>{pageTitle}</p>
             </Nav>
-            {renderSubNav(childPage)}
+            {blm ? renderSubNav(childPage) : null}
           </BgBlack>
         </Headroom>
 
