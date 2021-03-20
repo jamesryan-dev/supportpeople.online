@@ -115,7 +115,6 @@ function Layout(props) {
   const { children, navigation, pageTitle, theme, childPage } = props
   const renderSubNav = () => {
     if (childPage) {
-      console.log('child page prop present')
       return (
         <SubNav>
           <div>
@@ -128,8 +127,6 @@ function Layout(props) {
           </div>
         </SubNav>
       )
-    } else {
-      console.log('child page prop NOT present')
     }
   }
   return (
@@ -164,7 +161,7 @@ function Layout(props) {
           Built by: <a href="https://instagram.com/senso_indo">@senso_indo</a>,{' '}
           <a href="https://instagram.com/names.fm">@names.fm</a>,{' '}
           <a href="https://instagram.com/jeffreymanful">@jeffreymanful</a> &{' '}
-          <a href="https://instagram.com/0seans">@0seans</a>
+          <a href="https://instagram.com/seanpeter.co">@seanpeter.co</a>
         </Footer>
       </Content>
     </Bg>

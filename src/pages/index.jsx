@@ -93,25 +93,6 @@ const BoxHalf = styled.div`
   }
 `
 
-const CTA = styled.a`
-  padding: 1rem;
-  border: 1px solid black;
-  text-decoration: none;
-  background: black;
-  margin-right: 0.25rem;
-  &:link,
-  &:visited {
-    color: white !important;
-    border: 1px solid #eee;
-  }
-  &:hover {
-    background: #888;
-    border: 1px solid black;
-    transition: all 0.2s;
-    color: black !important;
-  }
-`
-
 const BtnRow = styled.div`
   display: block;
   margin: 2rem 0 2rem;
@@ -153,16 +134,7 @@ const Bubble = styled.div`
 `
 
 const LandingPage = ({ categories }) => {
-  console.log(categories)
-
-  const getRandomInt = (max) => {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
-
-  const randomCause = (cat) => {
-    return cat[2].links[getRandomInt(20)]
-  }
-
+  // console.log(categories)
   const navItems = [
     {
       name: 'Bail Funds',
