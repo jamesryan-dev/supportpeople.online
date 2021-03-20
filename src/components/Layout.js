@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { slide as Menu } from 'react-burger-menu'
 import styled from 'styled-components'
 import Headroom from 'react-headroom'
+import Link from 'next/link'
 
 const Nav = styled.div`
   display: flex;
@@ -143,9 +144,11 @@ function Layout(props) {
         <Headroom>
           <BgBlack>
             <Nav className="top-nav">
-              <a href="/">
-                <h2>SUPPORTPEOPLE.ONLINE</h2>
-              </a>
+              <Link href="/">
+                <a>
+                  <h2>SUPPORTPEOPLE.ONLINE</h2>
+                </a>
+              </Link>
               <p>{pageTitle}</p>
             </Nav>
             {renderSubNav(childPage)}

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const CausesComp = styled.div`
   display: flex;
@@ -72,17 +73,21 @@ function Causes(props) {
     <>
       <TitleLine>Causes to support</TitleLine>
       <CausesComp>
-        <a className="cause blm" href="/blacklivesmatter">
-          <h3>Black Lives Matter</h3>
-        </a>
-
-        <a className="cause yemen" href="/yemen">
-          <h3>Help Yemen</h3>
-        </a>
-
-        <a className="cause endsars" href="/endsars">
-          <h3>End Sars</h3>
-        </a>
+        <Link href="/blacklivesmatter">
+          <a className="cause blm">
+            <h3>Black Lives Matter</h3>
+          </a>
+        </Link>
+        <Link href="/yemen">
+          <a className="cause yemen">
+            <h3>Help Yemen</h3>
+          </a>
+        </Link>
+        <Link href="/endsars">
+          <a className="cause endsars">
+            <h3>End Sars</h3>
+          </a>
+        </Link>
       </CausesComp>
     </>
   )
