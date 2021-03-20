@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 import sanityClient from '../lib/sanityClient'
 import groq from 'groq'
+import Causes from '../components/Causes'
 
 const getEndSarsLinks = groq`*[_type == 'endsars'] | order(title) {
   'title': title,
@@ -198,6 +199,7 @@ const EndSars = ({ endsars }) => {
             )
           })}
       </FlexBox>
+      <Causes />
     </Layout>
   )
 }

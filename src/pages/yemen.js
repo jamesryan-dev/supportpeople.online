@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Head from 'next/head'
+import Causes from '../components/Causes'
 
 import sanityClient from '../lib/sanityClient'
 import groq from 'groq'
@@ -193,6 +194,7 @@ const Yemen = ({ yemen }) => {
             )
           })}
       </FlexBox>
+      <Causes />
     </Layout>
   )
 }

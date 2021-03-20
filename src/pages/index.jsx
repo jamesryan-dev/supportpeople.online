@@ -14,6 +14,8 @@ const client = sanityClient({
   useCdn: false, // `false` if you want to ensure fresh data
 })
 
+import Causes from '../components/Causes'
+
 const getAllCategories = groq`*[_type == 'category'] | order(title) {
   'title': title,
   'description': description,
@@ -150,72 +152,6 @@ const Bubble = styled.div`
   }
 `
 
-const TitleLine = styled.h2`
-  width: 100%;
-  position: relative;
-  margin-bottom: 20px;
-  line-height: 60px;
-  &:after {
-    position: absolute;
-    content: '';
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    bottom: 0;
-    height: 1px;
-    background: black;
-  }
-`
-
-const Causes = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  .cause {
-    width: 48%;
-    padding: 0 1em;
-    margin-bottom: 1em;
-    //  padding-left: 0;
-    transition: all 0.4s ease;
-    position: relative;
-    text-decoration: none;
-    color: white;
-    h3 {
-      color: white;
-      text-decoration: none;
-    }
-    &:after {
-      position: absolute;
-      content: '';
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      background: black;
-      display: block;
-      z-index: -1;
-      opacity: 0.8;
-    }
-    &:hover {
-      padding-left: 1.3em;
-      &:after {
-        opacity: 1;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: flex-start;
-    .cause {
-      width: 100%;
-      margin-bottom: 16px;
-    }
-  }
-`
-
 const LandingPage = ({ categories }) => {
   console.log(categories)
 
@@ -284,21 +220,7 @@ const LandingPage = ({ categories }) => {
         </a>{' '}
       </p>
 
-      <TitleLine>Causes to support</TitleLine>
-
-      <Causes>
-        <a className="cause blm" href="/blacklivesmatter">
-          <h3>Black Lives Matter</h3>
-        </a>
-
-        <a className="cause yemen" href="/yemen">
-          <h3>Help Yemen</h3>
-        </a>
-
-        <a className="cause endsars" href="/endsars">
-          <h3>End Sars</h3>
-        </a>
-      </Causes>
+      <Causes />
     </Layout>
   )
 }
