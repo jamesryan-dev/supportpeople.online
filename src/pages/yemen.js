@@ -119,6 +119,14 @@ const Alert = styled.div`
 `
 
 const Yemen = ({ yemen }) => {
+  const getRandomInt = (max) => {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+
+  const randomCause = (cat) => {
+    return cat[2].links[getRandomInt(20)]
+  }
+
   return (
     <Layout pageTitle="HELP YEMEN" childPage>
       <Head>
@@ -146,6 +154,12 @@ const Yemen = ({ yemen }) => {
         </p>
         <BubbleText />
       </Alert>
+
+      <BtnRow className="blacklivesmatter">
+        <CTA target="_blank" href={yemen[getRandomInt(18)].donateUrl}>
+          Random Fund
+        </CTA>
+      </BtnRow>
 
       <p>
         Are we missing anything?{' '}

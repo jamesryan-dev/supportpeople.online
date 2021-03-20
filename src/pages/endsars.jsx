@@ -119,6 +119,15 @@ const Alert = styled.div`
 `
 
 const EndSars = ({ endsars }) => {
+  const getRandomInt = (max) => {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+
+  const randomCause = (cat) => {
+    return cat[2].links[getRandomInt(20)]
+  }
+
+  console.log('endSars,', endsars)
   return (
     <Layout pageTitle="END SARS" childPage>
       <Head>
@@ -150,6 +159,12 @@ const EndSars = ({ endsars }) => {
         <p>We can not forget the lives that were lost in the Lekki Massacre.</p>
         <BubbleText />
       </Alert>
+
+      <BtnRow className="blacklivesmatter">
+        <CTA target="_blank" href={endsars[getRandomInt(4)].donateUrl}>
+          Random Fund
+        </CTA>
+      </BtnRow>
 
       <p>
         Are we missing anything?{' '}
