@@ -1,9 +1,11 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Head from 'next/head'
-import sanityClient from '../client'
 
-export const getEndSarsLinks = groq`*[_type == 'endsars'] | order(title) {
+import sanityClient from '../lib/sanityClient'
+import groq from 'groq'
+
+const getEndSarsLinks = groq`*[_type == 'endsars'] | order(title) {
   'title': title,
   'description': description,
   'url': url,
@@ -188,7 +190,7 @@ const EndSars = ({ endsars }) => {
 export default EndSars
 
 export const getStaticProps = async () => {
-  const endsars = await sanityClient.fetch(endsars)
+  const endsars = await sanityClient.fetch(getEndSarsLinks)
   return {
     props: {
       endsars,

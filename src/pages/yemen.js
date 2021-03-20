@@ -1,11 +1,20 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Head from 'next/head'
-import sanityClient from '../client'
-import { getYemenLinks } from '../queries'
+
+import sanityClient from '../lib/sanityClient'
+import groq from 'groq'
+
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import BubbleText from '../components/BubbleText'
+
+const getYemenLinks = groq`*[_type == 'yemen'] | order(title) {
+  'title': title,
+  'description': description,
+  'url': url,
+  'donateUrl': donateUrl
+}`
 
 const Title = styled.div`
   font-size: 1.6rem;
@@ -109,7 +118,7 @@ const Alert = styled.div`
   }
 `
 
-const LandingPage = ({ yemen }) => {
+const Yemen = ({ yemen }) => {
   return (
     <Layout pageTitle="HELP YEMEN" childPage>
       <Head>
@@ -174,14 +183,13 @@ const LandingPage = ({ yemen }) => {
   )
 }
 
-export default LandingPage
+export default Yemen
 
-LandingPage.propTypes = {
-  // links: PropTypes.arrayOf(PropTypes.node),
-  yemen: [],
+export const getStaticProps = async () => {
+  const yemen = await sanityClient.fetch(getYemenLinks)
+  return {
+    props: {
+      yemen,
+    },
+  }
 }
-
-LandingPage.getInitialProps = async () => ({
-  // links: await sanityClient.fetch(getAllLinks),
-  yemen: await sanityClient.fetch(getYemenLinks),
-})
