@@ -77,6 +77,11 @@ html {
     color: white !important;
   }
 
+  .endviolenceagainstwomen .button {
+    background: #BB0243 !important;
+    color: white !important;
+  }
+
   span {
     font-size: 80%;
   }

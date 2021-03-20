@@ -6,7 +6,7 @@ import sanityClient from '../lib/sanityClient'
 import groq from 'groq'
 import Causes from '../components/Causes'
 
-const getStopAsianHate = groq`*[_type == 'stopasianhate'] | order(title) {
+const getEndViolenceAgainstWomen = groq`*[_type == 'endviolenceagainstwomen'] | order(title) {
   'title': title,
   'description': description,
   'url': url,
@@ -131,58 +131,54 @@ const Names = styled.div`
   }
 `
 
-const StopAsianHate = ({ stopasianhate }) => {
+const EndViolenceAgainstWomen = ({ endviolenceagainstwomen }) => {
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max))
   }
 
-  console.log('stopasianhate,', stopasianhate)
+  console.log('stopasianhate,', endviolenceagainstwomen)
   return (
     <Layout pageTitle="#STOPASIANHATE" childPage>
       <Head>
-        <title>SUPPORTPEOPLE.ONLINE - #stopasianhate</title>
+        <title>SUPPORTPEOPLE.ONLINE - #endviolenceagainstwomen</title>
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width, viewport-fit=cover"
         />
       </Head>
       <Alert className="alert">
-        <Names>
-          <h2>Delaina Ashley Yaun</h2>
-          <h2>Xiaojie Tan</h2>
-          <h2>Daoyou Feng</h2>
-          <h2>Paul Andre Michels</h2>
-        </Names>
-        <span>We are still waiting on four names.</span>
+        <p>
+          <strong>One in three</strong> women worldwide experience physical or
+          sexual violence, mostly by an intimate partner. Violence against women
+          and girls is a human rights violation, and the immediate and long-term
+          physical, sexual, and mental consequences for women and girls can be
+          devastating, including death.
+        </p>
 
         <p>
-          Far too long Asian women have been dehumanized and fetishized by the
-          media. This can be traced from a violent history of colonization.
-        </p>
-        <p>
-          Anti-Asian hate crimes have spiked by nearly 150%. Since Asian women
-          have been historically treated as less-than-human in the past, it may
-          make it easier for perpetrators to believe that their deranged actions
-          are somehow justified. This needs to stop.
-        </p>
-        <p>
-          Acknowledge their pain. 6 women should not have had to die for us to
-          have this conversation. Hold your peers accountable.
+          Violence negatively affects women’s general well-being and prevents
+          women from fully participating in society. It impacts their families,
+          their community, and the country at large. It has tremendous costs,
+          from greater strains on health care to legal expenses and losses in
+          productivity.
         </p>
         <BubbleText />
       </Alert>
 
       <BtnRow className="blacklivesmatter">
-        <CTA target="_blank" href={stopasianhate[getRandomInt(7)].donateUrl}>
+        <CTA
+          target="_blank"
+          href={endviolenceagainstwomen[getRandomInt(7)].donateUrl}
+        >
           Random Fund
         </CTA>
       </BtnRow>
 
       <FlexBox>
-        {stopasianhate &&
-          stopasianhate.map((l) => {
+        {endviolenceagainstwomen &&
+          endviolenceagainstwomen.map((l) => {
             return (
-              <Outer className="stopasianhate">
+              <Outer className="endviolenceagainstwomen">
                 <Title>
                   <a href={l.url} target="_blank">
                     {l.title}
@@ -209,13 +205,15 @@ const StopAsianHate = ({ stopasianhate }) => {
   )
 }
 
-export default StopAsianHate
+export default EndViolenceAgainstWomen
 
 export const getStaticProps = async () => {
-  const stopasianhate = await sanityClient.fetch(getStopAsianHate)
+  const endviolenceagainstwomen = await sanityClient.fetch(
+    getEndViolenceAgainstWomen
+  )
   return {
     props: {
-      stopasianhate,
+      endviolenceagainstwomen,
     },
   }
 }
