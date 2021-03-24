@@ -146,9 +146,8 @@ const EndViolenceAgainstWomen = ({ endviolenceagainstwomen }) => {
     return Math.floor(Math.random() * Math.floor(max))
   }
 
-  console.log('stopasianhate,', endviolenceagainstwomen)
   return (
-    <Layout pageTitle="#STOPASIANHATE" childPage>
+    <Layout pageTitle="#RECLAIMTHESTREETS" childPage>
       <Head>
         <title>SUPPORTPEOPLE.ONLINE - #endviolenceagainstwomen</title>
         <meta
@@ -191,7 +190,7 @@ const EndViolenceAgainstWomen = ({ endviolenceagainstwomen }) => {
         <BubbleText />
       </Alert>
 
-      <Alert>
+      <Alert className="alert">
         <h2>What YOU can do NOW to prevent violence against women</h2>
         <p>
           While both men and women can be victims of violence, violence against
