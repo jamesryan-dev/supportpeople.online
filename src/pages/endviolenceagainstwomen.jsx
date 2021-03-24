@@ -340,24 +340,21 @@ const EndViolenceAgainstWomen = ({ endviolenceagainstwomen }) => {
         <p>For boys/men:</p>
         <ul>
           <li>
-            Men Can Stop Rape:{' '}
             <a href="https://mcsr.org/home" target="_blank">
-              https://mcsr.org/home
+              Men Can Stop Rape
             </a>
           </li>
           <li>
-            Big Talk Education:{' '}
             <a
               href="https://www.bigtalkeducation.co.uk/bigtalk-education/"
               target="_blank"
             >
-              https://www.bigtalkeducation.co.uk/bigtalk-education
+              Big Talk Education
             </a>
           </li>
           <li>
-            Chris Hemmings{' '}
             <a href="https://www.chris-hemmings.com/writing" target="_blank">
-              https://www.chris-hemmings.com/writing
+              Chris Hemming's Piece to Read
             </a>
           </li>
         </ul>
@@ -365,17 +362,17 @@ const EndViolenceAgainstWomen = ({ endviolenceagainstwomen }) => {
         <ul>
           <li>
             <a href="https://www.solacewomensaid.org/" target="_blank">
-              https://www.solacewomensaid.org/
+              Solace Women's Aid
             </a>
           </li>
           <li>
             <a href="https://www.refuge.org.uk/" target="_blank">
-              https://www.refuge.org.uk/
+              Refuge
             </a>
           </li>
           <li>
             <a href="https://www.nationaldahelpline.org.uk/" target="_blank">
-              https://www.nationaldahelpline.org.uk/
+              National Helpline
             </a>
           </li>
         </ul>
