@@ -140,7 +140,7 @@ function Causes(props) {
   }
 
   const getRandomPageButton = () => {
-    let num = getRandomInt(5)
+    let num = getRandomInt(6)
     console.log('num', num)
     if (num === 0) {
       return (
@@ -184,9 +184,17 @@ function Causes(props) {
       )
     } else if (num === 5) {
       return (
-        <Link href="/women">
+        <Link href="/endviolenceagainstwomen">
           <a className="cause">
-            <h3>Women</h3>
+            <h3>End Violence Against Women</h3>
+          </a>
+        </Link>
+      )
+    } else if (num === 6) {
+      return (
+        <Link href="/myanmar">
+          <a className="cause">
+            <h3>Justice for Myanmar</h3>
           </a>
         </Link>
       )
@@ -220,6 +228,11 @@ function Causes(props) {
         <Link href="/endviolenceagainstwomen">
           <a className="cause endviolenceagainstwomen">
             <h3>End Violence Against Women</h3>
+          </a>
+        </Link>
+        <Link href="/myanmar">
+          <a className="cause myanmar">
+            <h3>Justice for Myanmar</h3>
           </a>
         </Link>
       </CausesComp>

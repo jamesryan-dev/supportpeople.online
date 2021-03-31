@@ -187,16 +187,34 @@ const Myanmar = ({ myanmar }) => {
       </Head>
       <Alert className="alert">
         <p>
+          Myanmar is home to 135 ethnic groups. In recent years, the country has
+          experienced rapid change. A liberalisation process, which began in
+          2010, has seen more than 40 years of military rule give way to
+          democracy. The coup has changed this.
+        </p>
+        <p>
           For speaking out against the brutal, extreme military who have
           overthrown the government. Thousands have been imprisoned including
           elected leader Aung San Suu Kyi.
+        </p>
+        <p>
+          On 1 February 2021, the Myanmar military staged a coup d'état by
+          detaining members of the country’s democratically elected ruling
+          party. A resistance movement is fighting to restore democracy to
+          Myanmar.
+        </p>
+
+        <p>
+          The military is trying to stifle the people’s voices by shutting down
+          the internet - a clear violation of the right to freedom of
+          expression. But Myanmar people will not be silenced.
         </p>
 
         <BubbleText />
       </Alert>
 
       <BtnRow className="blacklivesmatter">
-        <CTA target="_blank" href={myanmar[getRandomInt(1)].donateUrl}>
+        <CTA target="_blank" href={myanmar[getRandomInt(20)].donateUrl}>
           Random Fund
         </CTA>
       </BtnRow>
@@ -204,9 +222,8 @@ const Myanmar = ({ myanmar }) => {
       <FlexBox>
         {myanmar &&
           myanmar.map((l) => {
-            console.log('L', l)
             return (
-              <Outer className="endviolenceagainstwomen">
+              <Outer className="myanmar">
                 <Title>
                   <a href={l.url} target="_blank">
                     {l.title}

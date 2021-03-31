@@ -82,6 +82,11 @@ html {
     color: white !important;
   }
 
+  .myanmar .button {
+    background: #EB7239 !important;
+    color: white !important;
+  }
+
   span {
     font-size: 80%;
   }
@@ -114,6 +119,12 @@ html {
   .cause.endsars {
     &:after {
       background: #008850;
+    }
+  }
+
+  .cause.myanmar {
+    &:after {
+      background: #EB7239;
     }
   }
 
