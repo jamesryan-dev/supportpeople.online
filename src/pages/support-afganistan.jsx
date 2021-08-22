@@ -6,7 +6,7 @@ import sanityClient from '../lib/sanityClient'
 import groq from 'groq'
 import Causes from '../components/Causes'
 
-const getMyanmar = groq`*[_type == 'afgan'] | order(title) {
+const getAfganistan = groq`*[_type == 'afgan'] | order(title) {
   'type': buttonType,
   'title': title,
   'description': desc,
@@ -183,15 +183,14 @@ h3 {
 `
 
 
-const Afgan = ({ myanmar }) => {
+const Afgan = ({ afganistan }) => {
 
-  console.log('afgan sanity:', myanmar)
+  console.table('table sanity:', afganistan)
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max))
   }
 
   const renderButtons = (l) => {
-      console.log('l', l)
     if (l.type === 'petition') {
       return (
         <>
@@ -258,15 +257,14 @@ const Afgan = ({ myanmar }) => {
       </Alert>
 
       <BtnRow className="blacklivesmatter">
-        <CTA random-cta target="_blank" href={myanmar[getRandomInt(47)].donateUrl}>
+        <CTA random-cta target="_blank" href={afganistan[getRandomInt(47)].donateUrl}>
          + Donate to a Randomly Selected Fund
         </CTA>
       </BtnRow>
 
       <FlexBox>
-        {myanmar &&
-          myanmar.map((l) => {
-              console.log('l: -->', l)
+        {afganistan &&
+          afganistan.map((l) => {
             return (
               <Outer className="afganistan-refugees">
                 <Title>
@@ -289,11 +287,10 @@ const Afgan = ({ myanmar }) => {
 export default Afgan
 
 export const getStaticProps = async () => {
-  const myanmar = await sanityClient.fetch(getMyanmar)
-  console.log('static props:', myanmar)
+  const afganistan = await sanityClient.fetch(getAfganistan)
   return {
     props: {
-      myanmar,
+      afganistan,
     },
   }
 }
