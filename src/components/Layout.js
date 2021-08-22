@@ -157,12 +157,7 @@ function Layout(props) {
             <div className="content">{children}</div>
           </div>
         </div>
-        <Footer className="footer">
-          Built by: <a href="https://instagram.com/senso_indo">@senso_indo</a>,{' '}
-          <a href="https://instagram.com/names.fm">@names.fm</a>,{' '}
-          <a href="https://instagram.com/jeffreymanful">@jeffreymanful</a> &{' '}
-          <a href="https://instagram.com/seanpeter.co">@seanpeter.co</a>
-        </Footer>
+        <Footer className="footer">Thank you</Footer>
       </Content>
     </Bg>
   )
