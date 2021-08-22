@@ -6,12 +6,13 @@ import sanityClient from '../lib/sanityClient'
 import groq from 'groq'
 import Causes from '../components/Causes'
 
-const getMyanmar = groq`*[_type == 'myanmar'] | order(title) {
+const getMyanmar = groq`*[_type == 'afgan'] | order(title) {
+  'type': buttonType,
   'title': title,
-  'description': description,
+  'description': desc,
   'url': url,
   'donateUrl': donateUrl,
-  'type': type
+  
 }`
 
 // import PropTypes from 'prop-types'
@@ -30,7 +31,24 @@ const Title = styled.div`
   a:hover {
     opacity: 0.3;
   }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  p {
+      font-size: 16px;
+  }
+
+  
 `
+
+const Desc = styled.p`
+ padding: 4px 12px;
+ background: #F1F1F2;
+ font-weight: 100;
+ display: inline-block;
+ border-radius: 28px;
+`
+
 
 const Outer = styled.div`
   padding: 1.5rem 0;
@@ -131,24 +149,34 @@ const Alert = styled.div`
 `
 
 const Names = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  h2 {
-    margin-left: 1rem;
-    &:first-of-type {
-      margin-left: 0;
+p {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    a {
+      margin-left: 1rem;
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
-  }
+}
+
+h3 {
+    margin: 0;
+}
+
 `
 
-const Myanmar = ({ myanmar }) => {
+
+const Afgan = ({ myanmar }) => {
+
+  console.log('afgan sanity:', myanmar)
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max))
   }
 
   const renderButtons = (l) => {
-    console.log('l:', l)
+      console.log('l', l)
     if (l.type === 'petition') {
       return (
         <>
@@ -168,8 +196,13 @@ const Myanmar = ({ myanmar }) => {
       return (
         <>
           {l.url && (
+            <a className="button" href={l.donateUrl} target="_blank">
+               + Make a Donation
+            </a>
+          )}
+          {l.url && (
             <a className="button" href={l.url} target="_blank">
-              Sign Petition
+              View Info
             </a>
           )}
         </>
@@ -178,9 +211,9 @@ const Myanmar = ({ myanmar }) => {
   }
 
   return (
-    <Layout pageTitle="#JUSTICEFORMYANMAR" childPage>
+    <Layout pageTitle="#afganistan" childPage>
       <Head>
-        <title>SUPPORTPEOPLE.ONLINE - #JUSTICEFORMYANMAR</title>
+        <title>SUPPORTPEOPLE.ONLINE - #afganistan</title>
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width, viewport-fit=cover"
@@ -188,28 +221,23 @@ const Myanmar = ({ myanmar }) => {
       </Head>
       <Alert className="alert">
         <p>
-          Myanmar is home to 135 ethnic groups. In recent years, the country has
-          experienced rapid change. A liberalisation process, which began in
-          2010, has seen more than 40 years of military rule give way to
-          democracy. The coup has changed this.
-        </p>
-        <p>
-          For speaking out against the brutal, extreme military who have
-          overthrown the government. Thousands have been imprisoned including
-          elected leader Aung San Suu Kyi.
-        </p>
-        <p>
-          On 1 February 2021, the Myanmar military staged a coup d'état by
-          detaining members of the country’s democratically elected ruling
-          party. A resistance movement is fighting to restore democracy to
-          Myanmar.
-        </p>
+         Links sourced from the great work of:</p> 
+         <Names>
+             <p>
+            <a href="https://www.instagram.com/manillasen/">
+                <h3>@manillasen</h3>
+            </a>
 
-        <p>
-          The military is trying to stifle the people’s voices by shutting down
-          the internet - a clear violation of the right to freedom of
-          expression. But Myanmar people will not be silenced.
-        </p>
+
+            <a href="https://www.instagram.com/elsalik/"><h3>@elsalik</h3></a>
+            <a href="https://www.instagram.com/emilieadelinamonies/"><h3>@emilieadelinamonies</h3></a>
+            <a href="https://www.instagram.com/natashaalhariri/"><h3>@natashaalhariri</h3></a>
+            <a href="https://www.instagram.com/mursalpopalzaii/"><h3>@mursalpopalzaii</h3></a>
+            </p>
+            </Names>
+
+        <p>Faith Over Fear || Rise to Peace</p>
+       
 
         <BubbleText />
       </Alert>
@@ -223,13 +251,16 @@ const Myanmar = ({ myanmar }) => {
       <FlexBox>
         {myanmar &&
           myanmar.map((l) => {
+              console.log('l: -->', l)
             return (
-              <Outer className="myanmar">
+              <Outer className="afganistan-refugees">
                 <Title>
                   <a href={l.url} target="_blank">
                     {l.title}
                   </a>
+                  <Desc className='desc'>{l.description}</Desc>
                 </Title>
+                
                 <Info>{renderButtons(l)}</Info>
               </Outer>
             )
@@ -240,10 +271,11 @@ const Myanmar = ({ myanmar }) => {
   )
 }
 
-export default Myanmar
+export default Afgan
 
 export const getStaticProps = async () => {
   const myanmar = await sanityClient.fetch(getMyanmar)
+  console.log('static props:', myanmar)
   return {
     props: {
       myanmar,

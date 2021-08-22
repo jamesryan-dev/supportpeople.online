@@ -60,6 +60,18 @@ html {
 
   }
 
+
+  .afganistan-refugees .button {
+    background: #D5AE39 !important;
+    color: white !important;
+    &:hover {
+      background: #D5AE39 !important;
+      opacity: 1;
+      border-color: #D5AE39;
+    }
+
+  }
+
   .endsars .button {
     background: #008850 !important;
     color: white !important;
@@ -125,6 +137,12 @@ html {
   .cause.myanmar {
     &:after {
       background: #EB7239;
+    }
+  }
+
+  .cause.afganistan-refugees {
+    &:after {
+      background: #D5AE39;
     }
   }
 
