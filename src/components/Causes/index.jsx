@@ -200,7 +200,7 @@ function Causes(props) {
       )
     } else if (num === 7) {
       return (
-        <Link href="/afganistan">
+        <Link href="/support-afganistan">
           <a className="cause">
             <h3>Support Afganistan</h3>
           </a>
@@ -243,7 +243,7 @@ function Causes(props) {
             <h3>Justice for Myanmar</h3>
           </a>
         </Link>
-        <Link href="/afganistan">
+        <Link href="/support-afganistan">
           <a className="cause afganistan-refugees">
             <h3>Support Afganistan</h3>
           </a>
