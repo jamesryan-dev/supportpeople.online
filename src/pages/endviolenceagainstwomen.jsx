@@ -101,6 +101,10 @@ const CTA = styled.a`
     transition: all 0.2s;
     color: black !important;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const BtnRow = styled.div`
@@ -390,7 +394,7 @@ const EndViolenceAgainstWomen = ({ endviolenceagainstwomen }) => {
           target="_blank"
           href={endviolenceagainstwomen[getRandomInt(7)].donateUrl}
         >
-          Random Fund
+        + Donate to a Randomly Selected Fund
         </CTA>
       </BtnRow>
 

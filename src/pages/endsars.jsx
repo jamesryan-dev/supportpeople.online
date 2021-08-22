@@ -101,6 +101,10 @@ const CTA = styled.a`
     transition: all 0.2s;
     color: black !important;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const BtnRow = styled.div`
@@ -163,7 +167,7 @@ const EndSars = ({ endsars }) => {
 
       <BtnRow className="blacklivesmatter">
         <CTA target="_blank" href={endsars[getRandomInt(4)].donateUrl}>
-          Random Fund
+        + Donate to a Randomly Selected Fund
         </CTA>
       </BtnRow>
 

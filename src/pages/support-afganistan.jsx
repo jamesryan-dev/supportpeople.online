@@ -43,10 +43,10 @@ const Title = styled.div`
 
 const Desc = styled.p`
  padding: 4px 12px;
- background: #F1F1F2;
- font-weight: 100;
+ font-weight: 400;
  display: inline-block;
  border-radius: 28px;
+ opacity: 0.85;
 `
 
 
@@ -120,6 +120,10 @@ const CTA = styled.a`
     transition: all 0.2s;
     color: black !important;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const BtnRow = styled.div`
@@ -163,6 +167,17 @@ p {
 
 h3 {
     margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  p {
+    flex-direction: column;
+    a {
+      margin-left: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+
 }
 
 `
@@ -243,8 +258,8 @@ const Afgan = ({ myanmar }) => {
       </Alert>
 
       <BtnRow className="blacklivesmatter">
-        <CTA target="_blank" href={myanmar[getRandomInt(20)].donateUrl}>
-          Random Fund
+        <CTA random-cta target="_blank" href={myanmar[getRandomInt(47)].donateUrl}>
+         + Donate to a Randomly Selected Fund
         </CTA>
       </BtnRow>
 

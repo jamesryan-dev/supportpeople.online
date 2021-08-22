@@ -106,7 +106,7 @@ const BgBlack = styled.div`
 `
 
 const Footer = styled.div`
-  font-size: 1.4rem;
+  font-size: 0.777rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 `
@@ -157,7 +157,7 @@ function Layout(props) {
             <div className="content">{children}</div>
           </div>
         </div>
-        <Footer className="footer">Thank you</Footer>
+        <Footer className="footer">♥️ Made with love and hope</Footer>
       </Content>
     </Bg>
   )

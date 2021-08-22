@@ -8,6 +8,20 @@ export const GlobalStyles = createGlobalStyle`
 html {
   scroll-behavior: smooth;
 }
+* {
+  transition: all 0.455s linear 0.1s !important;
+}
+
+.desc {
+  padding: 4px 12px;
+ background: #F1F1F2;
+ color: #5f5f5f;
+ font-weight: 400;
+ display: inline-block;
+ border-radius: 28px;
+ opacity: 0.85;
+ transition: all 0.25s linear;
+   }
 
 
   *,
@@ -26,6 +40,19 @@ html {
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     transition: all 0.25s linear;
   }
+
+  body.dark-mode {
+    .desc {
+      padding: 4px 12px;
+     background: #404040;
+     color: #b5b5b5;
+     font-weight: 400;
+     display: inline-block;
+     border-radius: 28px;
+     opacity: 0.85;
+       }
+  }
+
 
   body.light-mode {
 
@@ -57,6 +84,16 @@ html {
       opacity: 1;
       border-color: #FAC800;
     }
+
+   .desc {
+  padding: 4px 12px;
+ background: #F1F1F2 !important;
+ color: #5f5f5f !important;
+ font-weight: 400;
+ display: inline-block;
+ border-radius: 28px;
+ opacity: 0.85;
+   }
 
   }
 

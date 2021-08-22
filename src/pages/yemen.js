@@ -158,7 +158,7 @@ const Yemen = ({ yemen }) => {
 
       <BtnRow className="blacklivesmatter">
         <CTA target="_blank" href={yemen[getRandomInt(18)].donateUrl}>
-          Random Fund
+          + Donate to a Randomly Selected Fund
         </CTA>
       </BtnRow>
 

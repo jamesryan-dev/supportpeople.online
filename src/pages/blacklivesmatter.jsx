@@ -108,6 +108,10 @@ const CTA = styled.a`
     transition: all 0.2s;
     color: black !important;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const BtnRow = styled.div`
@@ -186,7 +190,7 @@ const BlackLivesMatter = ({ categories }) => {
           target="_blank"
           href={categories[0].links[getRandomInt(20)].donateUrl}
         >
-          Random Fund
+        + Donate to a Randomly Selected Fund
         </CTA>
         <CTA
           href="https://secure.actblue.com/donate/bail_funds_george_floyd"
