@@ -35,20 +35,17 @@ const Title = styled.div`
   flex-direction: column;
   align-items: flex-start;
   p {
-      font-size: 16px;
+    font-size: 16px;
   }
-
-  
 `
 
 const Desc = styled.p`
- padding: 4px 12px;
- font-weight: 400;
- display: inline-block;
- border-radius: 28px;
- opacity: 0.85;
+  padding: 4px 12px;
+  font-weight: 400;
+  display: inline-block;
+  border-radius: 28px;
+  opacity: 0.85;
 `
-
 
 const Outer = styled.div`
   padding: 1.5rem 0;
@@ -153,7 +150,7 @@ const Alert = styled.div`
 `
 
 const Names = styled.div`
-p {
+  p {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -163,28 +160,24 @@ p {
         margin-left: 0;
       }
     }
-}
-
-h3 {
-    margin: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  p {
-    flex-direction: column;
-    a {
-      margin-left: 0;
-      margin-bottom: 0.5rem;
-    }
   }
 
-}
+  h3 {
+    margin: 0;
+  }
 
+  @media only screen and (max-width: 768px) {
+    p {
+      flex-direction: column;
+      a {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
 `
 
-
 const Afgan = ({ afganistan }) => {
-
   console.table('table sanity:', afganistan)
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max))
@@ -206,12 +199,12 @@ const Afgan = ({ afganistan }) => {
           )}
         </>
       )
-    } else if (l.type === 'donation' && l.donateUrl !== undefined) {
+    } else {
       return (
         <>
           {l.url && (
             <a className="button" href={l.donateUrl} target="_blank">
-               + Make a Donation
+              + Make a Donation
             </a>
           )}
           {l.url && (
@@ -221,6 +214,16 @@ const Afgan = ({ afganistan }) => {
           )}
         </>
       )
+    }
+  }
+
+  const renderRandomUrl = (afganistan) => {
+    console.log('renderRandomUrl fired')
+    if (typeof afganistan.donateUrl !== undefined) {
+      let url = '';
+      url = afganistan[getRandomInt(30)].donateUrl
+      console.log('url:', url)
+      return url
     }
   }
 
@@ -234,31 +237,36 @@ const Afgan = ({ afganistan }) => {
         />
       </Head>
       <Alert className="alert">
-        <p>
-         Links sourced from the great work of:</p> 
-         <Names>
-             <p>
+        <p>Links sourced from the great work of:</p>
+        <Names>
+          <p>
             <a href="https://www.instagram.com/manillasen/">
-                <h3>@manillasen</h3>
+              <h3>@manillasen</h3>
             </a>
 
-
-            <a href="https://www.instagram.com/elsalik/"><h3>@elsalik</h3></a>
-            <a href="https://www.instagram.com/emilieadelinamonies/"><h3>@emilieadelinamonies</h3></a>
-            <a href="https://www.instagram.com/natashaalhariri/"><h3>@natashaalhariri</h3></a>
-            <a href="https://www.instagram.com/mursalpopalzaii/"><h3>@mursalpopalzaii</h3></a>
-            </p>
-            </Names>
+            <a href="https://www.instagram.com/elsalik/">
+              <h3>@elsalik</h3>
+            </a>
+            <a href="https://www.instagram.com/emilieadelinamonies/">
+              <h3>@emilieadelinamonies</h3>
+            </a>
+            <a href="https://www.instagram.com/natashaalhariri/">
+              <h3>@natashaalhariri</h3>
+            </a>
+            <a href="https://www.instagram.com/mursalpopalzaii/">
+              <h3>@mursalpopalzaii</h3>
+            </a>
+          </p>
+        </Names>
 
         <p>Faith Over Fear || Rise to Peace</p>
-       
 
         <BubbleText />
       </Alert>
 
       <BtnRow className="blacklivesmatter">
-        <CTA random-cta target="_blank" href={afganistan[getRandomInt(47)].donateUrl}>
-         + Donate to a Randomly Selected Fund
+        <CTA random-cta target="_blank" href={renderRandomUrl(afganistan)}>
+          + Donate to a Randomly Selected Fund
         </CTA>
       </BtnRow>
 
@@ -271,9 +279,9 @@ const Afgan = ({ afganistan }) => {
                   <a href={l.url} target="_blank">
                     {l.title}
                   </a>
-                  <Desc className='desc'>{l.description}</Desc>
+                  <Desc className="desc">{l.description}</Desc>
                 </Title>
-                
+
                 <Info>{renderButtons(l)}</Info>
               </Outer>
             )
