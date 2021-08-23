@@ -191,7 +191,7 @@ const Afgan = ({ afganistan }) => {
   }
 
   const renderButtons = (l) => {
-    if (l.type === 'petition') {
+    if (l.type === 'petition' && l.donateUrl !== undefined) {
       return (
         <>
           {l.url && (
@@ -206,7 +206,7 @@ const Afgan = ({ afganistan }) => {
           )}
         </>
       )
-    } else {
+    } else if (l.type === 'donation' && l.donateUrl !== undefined) {
       return (
         <>
           {l.url && (
